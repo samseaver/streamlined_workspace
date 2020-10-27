@@ -99,7 +99,7 @@ sub new
 	my %arg_hash2 = @args;
 	if (exists $arg_hash2{"token"}) {
 	    $self->{token} = $arg_hash2{"token"};
-	} elsif (exists $arg_hash2{"user_id"}) {
+	} else {
 	    my $token = Bio::KBase::AuthToken->new(@args);
 	    if (!$token->error_message) {
 	        $self->{token} = $token->token;
